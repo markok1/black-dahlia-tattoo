@@ -39,8 +39,32 @@ if ($name === '' || !filter_var($visitorMail, FILTER_VALIDATE_EMAIL)) {
     exit;
 }
 
+// ---- Spam protection -------------------------------------------------------
+// "subject" is a hidden trap field: it sits off-screen, so people never fill it.
+// "form_elapsed" is how many seconds the page was open before sending (main.js).
+$trap    = field('subject');
+$elapsed = field('form_elapsed');
+
+// Trap filled, or a link / an absurdly long text in the name field: a bot.
+// Pretend success so it doesn't retry, and send nothing.
+if ($trap !== '' || strlen($name) > 200 || preg_match('~https?://|www\.~i', $name)) {
+    echo json_encode(array('status' => 'success'));
+    exit;
+}
+// Sent faster than a person can fill in the form. The visitor sees the usual
+// error message and can simply send again.
+if (is_numeric($elapsed) && $elapsed < 3) {
+    http_response_code(400);
+    echo json_encode(array('status' => 'error', 'reason' => 'too_fast'));
+    exit;
+}
+// No timing info: an old cached page, or a script posting here directly. The
+// studio still gets the message (marked for checking), but no confirmation goes
+// to the typed-in address, so the form can't be used to send mail to strangers.
+$verified = is_numeric($elapsed);
+
 // ---- Email to the studio ---------------------------------------------------
-$subject = "Nova prijava za kurs — tattoobeograd.rs";
+$subject = ($verified ? "" : "[Proveriti] ") . "Nova prijava za kurs — tattoobeograd.rs";
 $body =
     "Nova prijava za kurs:\n\n" .
     "Ime i prezime:\n" . $name . "\n\n" .
@@ -48,6 +72,10 @@ $body =
     "Telefon:\n" . $phone . "\n\n" .
     "Željeni datum:\n" . $datum . "\n\n" .
     "Poruka klijenta:\n" . $message . "\n";
+
+if (!$verified) {
+    $body .= "\n---\nNapomena: poruka nije prošla automatsku proveru protiv spama, pa pošiljaocu nije poslat mejl sa potvrdom.\n";
+}
 
 $headers  = "From: " . $fromName . " <" . $fromEmail . ">\r\n";
 $headers .= "Reply-To: " . clean_header($name) . " <" . $visitorMail . ">\r\n";
@@ -69,7 +97,9 @@ $headers2 .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
 // ---- Send ------------------------------------------------------------------
 $sentToStudio = @mail($mailto, '=?UTF-8?B?' . base64_encode($subject) . '?=', $body, $headers);
-@mail($visitorMail, '=?UTF-8?B?' . base64_encode($subject2) . '?=', $body2, $headers2);
+if ($verified) {
+    @mail($visitorMail, '=?UTF-8?B?' . base64_encode($subject2) . '?=', $body2, $headers2);
+}
 
 if ($sentToStudio) {
     echo json_encode(array('status' => 'success'));

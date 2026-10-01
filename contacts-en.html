@@ -211,6 +211,10 @@
               <p>If you have any questions, you can contact us. We will answer you as soon as possible.</p>
               <!-- RD Mailform-->
               <form class="js-mailform text-left rd-form quote-form-inputs" data-form-kind="contact" method="post" action="php/contact-form.php" novalidate>
+                <!-- Spam trap: kept off-screen, people never see or fill it. It must stay empty. -->
+                <div style="position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden" aria-hidden="true">
+                  <label>Subject <input type="text" name="subject" value="" tabindex="-1" autocomplete="off" /></label>
+                </div>
                 <div class="row row-20 justify-content-center">
                   <div class="col-lg-12">
                     <div class="form-wrap">
@@ -324,6 +328,6 @@
     <!-- Javascript-->
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/main.js?v=2"></script>
   </body>
 </html>

@@ -30,6 +30,10 @@ var BD_ENDPOINTS = {
   kurs: "php/kurs.php",
 };
 
+// When the page was opened. Sent with the form so the PHP handlers can tell a
+// person from a bot that submits instantly.
+var BD_PAGE_OPENED_AT = Date.now();
+
 // Same notification text for all three forms (only the language changes).
 var BD_MESSAGES = {
   sr: {
@@ -168,6 +172,11 @@ function bdBuildPayload(kind, $form) {
     // .tattoo-date is a text input (date picker), so read its value.
     payload.datum = $.trim($form.find(".tattoo-date").val() || "");
   }
+
+  // Spam protection, checked in the PHP handlers: the hidden trap field
+  // (people leave it empty) and how long the page was open before sending.
+  payload.subject = $form.find('input[name="subject"]').val() || "";
+  payload.form_elapsed = Math.round((Date.now() - BD_PAGE_OPENED_AT) / 1000);
 
   return payload;
 }

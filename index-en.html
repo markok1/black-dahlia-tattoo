@@ -1213,6 +1213,10 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
               <form class="js-mailform text-left quote-form-inputs"
                 data-form-kind="appointment"
                 method="post" action="php/appointment.php" novalidate>
+                <!-- Spam trap: kept off-screen, people never see or fill it. It must stay empty. -->
+                <div style="position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden" aria-hidden="true">
+                  <label>Subject <input type="text" name="subject" value="" tabindex="-1" autocomplete="off" /></label>
+                </div>
                 <div class="row row-20 justify-content-center">
                   <div class="col-lg-6">
                     <div class="form-wrap">
@@ -1369,6 +1373,6 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
     <!-- Javascript-->
     <script src="js/core.min.js?v=1.1"></script>
     <script src="js/script.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/main.js?v=2"></script>
   </body>
 </html>
