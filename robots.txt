@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /php/
+Disallow: /default.php
+
+Sitemap: https://tattoobeograd.rs/sitemap.xml

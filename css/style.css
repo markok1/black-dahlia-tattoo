@@ -138,14 +138,16 @@ h6 a:hover,
   color: #9b9b9b;
 }
 
-h1 {
+h1,
+.heading-1 {
   font-weight: 500;
   font-size: 30px;
   line-height: 1.5;
 }
 
 @media (min-width: 1200px) {
-  h1 {
+  h1,
+  .heading-1 {
     font-size: 77px;
     line-height: 1.125;
   }
@@ -164,13 +166,15 @@ h2 {
   }
 }
 
-h3 {
+h3,
+.heading-3 {
   font-size: 24px;
   line-height: 1.2;
 }
 
 @media (min-width: 1200px) {
-  h3 {
+  h3,
+  .heading-3 {
     font-size: 36px;
     line-height: 1.33333;
   }
@@ -3956,7 +3960,8 @@ html.tablet .ui-to-top {
   white-space: normal;
 }
 
-.swiper-slide-caption h1 + * {
+.swiper-slide-caption h1 + *,
+.swiper-slide-caption .heading-1 + * {
   margin-top: 20px;
 }
 
@@ -8256,7 +8261,8 @@ html[class*="ie"] .dtp-hour-hand {
   background-repeat: no-repeat;
   background-size: cover;
 }
-.social-cta h1 {
+.social-cta h1,
+.social-cta .heading-1 {
   font-family: "Poppins", sans-serif;
   font-weight: normal;
   font-size: 25px;
@@ -8352,7 +8358,8 @@ html[class*="ie"] .dtp-hour-hand {
 }
 
 @media (max-width: 600px) {
-  .social-cta h1 {
+  .social-cta h1,
+  .social-cta .heading-1 {
     font-size: 17px;
   }
   .box-icon-modern-title {
