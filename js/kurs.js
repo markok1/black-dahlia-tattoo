@@ -3,6 +3,7 @@
    - Serbian date picker: wraps the template plugin call so the picker opens
      with a Serbian calendar and labels (only on the Serbian page)
    - Accordions (curriculum modules + FAQ), one open per group, ARIA-synced
+   - Technique showcase: stage on desktop, accordion on phones, pausable autoplay
    - Scroll reveal: content is visible by default; JS opts in only when
      IntersectionObserver exists, with a polling fallback so nothing can stay hidden
    - Intro video: plays only while on screen, never on save-data / reduced motion
@@ -75,6 +76,159 @@
   }
   initAccordion(".k-modules", ".k-module", ".k-module-btn");
   initAccordion(".k-faq", ".k-faq-item", ".k-faq-q");
+
+  /* ---- Technique showcase ------------------------------------------------ */
+  // Desktop: the list sits beside a stage and each technique swaps the photo
+  // on it (click or mouse hover). Phones: the same photos are moved under
+  // their own technique, so the list behaves like an accordion.
+  // Autoplay steps through the techniques while the block is on screen,
+  // pauses while the list is hovered or focused, and stops for good once
+  // someone picks a technique or presses pause. None for reduced motion.
+  each(doc.querySelectorAll("[data-tech]"), function (box) {
+    var tablist = box.querySelector(".k-tech-tabs");
+    var items = box.querySelectorAll(".k-tech-item");
+    var tabs = box.querySelectorAll(".k-tech-tab");
+    var wells = box.querySelectorAll(".k-tech-well");
+    var shots = box.querySelectorAll(".k-tech-shot");
+    var frame = box.querySelector(".k-tech-frame");
+    var ui = box.querySelector(".k-tech-ui");
+    var count = box.querySelector(".k-tech-count b");
+    var toggle = box.querySelector(".k-tech-play");
+    var phone = window.matchMedia ? window.matchMedia("(max-width: 767.98px)") : null;
+    var stacked = false;
+    var current = 0;
+    var hoverTimer = null;
+    var scrollTimer = null;
+    var hold = { hover: false, focus: false, away: true, hidden: false };
+
+    function select(i) {
+      if (i === current) return;
+      current = i;
+      each(items, function (item, k) {
+        item.classList.toggle("is-active", k === i);
+        tabs[k].setAttribute("aria-expanded", k === i ? "true" : "false");
+      });
+      each(shots, function (shot, k) {
+        shot.classList.toggle("is-active", k === i);
+        if (k === i) shot.removeAttribute("aria-hidden");
+        else shot.setAttribute("aria-hidden", "true");
+      });
+      if (count) count.textContent = (i < 9 ? "0" : "") + (i + 1);
+      if (stacked && ui && wells[i]) wells[i].appendChild(ui);
+    }
+
+    // Move the photos between the desktop stage and the phone accordion.
+    function layout() {
+      var next = !!(phone && phone.matches && wells.length === shots.length && frame);
+      if (next === stacked) return;
+      stacked = next;
+      box.classList.toggle("is-stacked", stacked);
+      each(shots, function (shot, k) {
+        if (stacked) wells[k].appendChild(shot);
+        else frame.insertBefore(shot, ui);
+      });
+      if (ui) (stacked ? wells[current] : frame).appendChild(ui);
+    }
+
+    // After a tap on a phone the rows above may collapse; bring the opened
+    // technique back into view once the accordion has settled.
+    function keepInView(k) {
+      if (!stacked) return;
+      window.clearTimeout(scrollTimer);
+      scrollTimer = window.setTimeout(function () {
+        var top = tabs[k].getBoundingClientRect().top;
+        var vh = window.innerHeight || root.clientHeight;
+        if (top < 70 || top > vh * 0.55) {
+          window.scrollTo({ top: window.pageYOffset + top - 84, behavior: reduceMotion ? "auto" : "smooth" });
+        }
+      }, reduceMotion ? 0 : 820);
+    }
+
+    function syncHold() {
+      box.classList.toggle("is-paused", hold.hover || hold.focus || hold.away || hold.hidden);
+    }
+
+    function setAuto(on) {
+      box.classList.toggle("is-auto", on);
+      if (!toggle) return;
+      toggle.classList.toggle("is-stopped", !on);
+      toggle.setAttribute("aria-label", toggle.getAttribute(on ? "data-label-pause" : "data-label-play"));
+    }
+
+    each(tabs, function (tab, k) {
+      tab.addEventListener("click", function () {
+        setAuto(false);
+        select(k);
+        keepInView(k);
+      });
+      tab.addEventListener("pointerenter", function (e) {
+        if (e.pointerType !== "mouse" || stacked) return;
+        window.clearTimeout(hoverTimer);
+        hoverTimer = window.setTimeout(function () {
+          select(k);
+        }, 60);
+      });
+      tab.addEventListener("pointerleave", function () {
+        window.clearTimeout(hoverTimer);
+      });
+      // The active row's progress bar finishing is what advances autoplay.
+      var bar = tab.querySelector(".k-tech-bar");
+      if (bar) {
+        bar.addEventListener("animationend", function () {
+          if (k === current && box.classList.contains("is-auto")) select((current + 1) % tabs.length);
+        });
+      }
+    });
+
+    layout();
+    if (phone) {
+      if (phone.addEventListener) phone.addEventListener("change", layout);
+      else if (phone.addListener) phone.addListener(layout);
+    }
+
+    if (reduceMotion || !toggle || !tablist) return;
+
+    toggle.hidden = false;
+    toggle.addEventListener("click", function () {
+      setAuto(!box.classList.contains("is-auto"));
+    });
+    tablist.addEventListener("pointerenter", function (e) {
+      if (e.pointerType !== "mouse") return;
+      hold.hover = true;
+      syncHold();
+    });
+    tablist.addEventListener("pointerleave", function () {
+      hold.hover = false;
+      syncHold();
+    });
+    tablist.addEventListener("focusin", function (e) {
+      // On phones the pause button sits inside the list; focusing it must not hold autoplay.
+      if (toggle.contains(e.target)) return;
+      hold.focus = true;
+      syncHold();
+    });
+    tablist.addEventListener("focusout", function () {
+      hold.focus = false;
+      syncHold();
+    });
+    doc.addEventListener("visibilitychange", function () {
+      hold.hidden = doc.hidden;
+      syncHold();
+    });
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(
+        function (entries) {
+          hold.away = !entries[0].isIntersecting;
+          syncHold();
+        },
+        { threshold: 0.35 }
+      ).observe(box);
+    } else {
+      hold.away = false;
+    }
+    syncHold();
+    setAuto(true);
+  });
 
   /* ---- Intro video ------------------------------------------------------- */
   var video = doc.getElementById("intro");

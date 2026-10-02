@@ -45,6 +45,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
     <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="sr_RS" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="robots" content="noindex, nofollow" />
     <link rel="canonical" href="https://tattoobeograd.rs/kurs-en.html" />
     <link rel="alternate" hreflang="sr" href="https://tattoobeograd.rs/kurs.html" />
     <link rel="alternate" hreflang="en" href="https://tattoobeograd.rs/kurs-en.html" />
@@ -63,7 +64,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
     <link rel="stylesheet" href="css/bootstrap.css?v=2" />
     <link rel="stylesheet" href="css/fonts.css?v=2" />
     <link rel="stylesheet" href="css/style.css?v=3" />
-    <link rel="stylesheet" href="css/kurs.css?v=6" />
+    <link rel="stylesheet" href="css/kurs2.css?v=1" />
     <script src="https://www.google.com/recaptcha/api.js?hl=en" async defer></script>
     <script type="application/ld+json">
       {
@@ -269,7 +270,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                       </li>
                       <li class="rd-nav-item"><a class="rd-nav-link" href="index-en.html#zakazi">Book Now</a></li>
                       <li class="rd-nav-item"><a class="rd-nav-link" href="contacts-en.html">Contact</a></li>
-                      <li class="rd-nav-item active"><a class="rd-nav-link" href="kurs-en.html">Course</a></li>
+                      <li class="rd-nav-item active"><a class="rd-nav-link" href="kurs2-en.html">Course</a></li>
                       <li class="rd-nav-item">
                         <a class="rd-nav-link w-icon" href="tel:+38163235177">
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -279,17 +280,17 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                         </a>
                       </li>
                       <li class="rd-nav-item rd-navbar--has-dropdown rd-navbar-submenu">
-                        <a class="rd-nav-link" href="kurs.html">
+                        <a class="rd-nav-link" href="kurs2.html">
                           <img class="navbar-lang-image" src="images/serbia.png" alt="Serbian" />
                           Srpski</a
                         >
                         <!-- RD Navbar Dropdown-->
                         <ul class="rd-menu rd-navbar-dropdown lang-dropdown lang-menu">
                           <li class="rd-dropdown-item">
-                            <a class="rd-dropdown-link" href="kurs-en.html"> <img class="navbar-lang-image" src="images/united-states.png" alt="US English" /> English</a>
+                            <a class="rd-dropdown-link" href="kurs2-en.html"> <img class="navbar-lang-image" src="images/united-states.png" alt="US English" /> English</a>
                           </li>
                           <li class="rd-dropdown-item">
-                            <a class="rd-dropdown-link" href="kurs.html"> <img class="navbar-lang-image" src="images/serbia.png" alt="Srpski" /> Srpski</a>
+                            <a class="rd-dropdown-link" href="kurs2.html"> <img class="navbar-lang-image" src="images/serbia.png" alt="Srpski" /> Srpski</a>
                           </li>
                         </ul>
                       </li>
@@ -383,7 +384,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
               <h2 class="k-title" id="sta-nudimo-title">Techniques in <em>demand today</em></h2>
             </div>
             <div class="k-offer-aside k-reveal" data-delay="1">
-              <p class="k-text">Black &amp; grey, colour realism, linework, shading and dotwork – the styles clients ask for most today. You learn every technique in the studio, on professional equipment, with your mentor right beside you.</p>
+              <p class="k-text">You learn every technique in the studio, with your mentor right beside you.</p>
               <p class="k-seats"><i aria-hidden="true"></i>Places are limited, so everyone gets enough time for hands-on work and the mentor’s direct attention.</p>
             </div>
           </div>
@@ -503,7 +504,73 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
       </section>
 
       <!-- ============================================================
-           3. Program — curriculum modules (accordion)
+           3. Mentor — bio, then a marquee of his work
+           ============================================================ -->
+      <section class="k-section k-mentor" id="mentor">
+        <div class="container">
+          <div class="k-mentor-grid">
+            <div class="k-mentor-visual k-reveal">
+              <img class="k-mv-main" src="images/kurs/mentor-work.webp" alt="Black and grey full-back angel tattoo by Miroslav Maslar Ciki" width="1040" height="1300" loading="lazy" decoding="async" />
+              <img class="k-mv-portrait" src="images/kurs/mentor.jpg" alt="Miroslav Maslar Ciki, founder of The Black Dahlia Tattoo Studio" width="370" height="370" loading="lazy" decoding="async" />
+            </div>
+            <div class="k-reveal" data-delay="1">
+              <p class="k-eyebrow">Your mentor</p>
+              <h2 class="k-title">Miroslav Maslar <em>Ciki</em></h2>
+              <p class="k-mentor-role">Founder, Tattoo Artist</p>
+              <p class="k-text">Ciki has been tattooing for more than 15 years and covers all tattoo styles. His favourites are realism and colour realism. He loves his work, is exceptionally talented and creative, and especially enjoys complex, original tattoo projects.</p>
+              <blockquote class="k-quote">For us, tattooing is an art that gets under the skin. No project is impossible.</blockquote>
+              <div class="k-actions">
+                <a class="button button-primary" href="#zakazi-kurs">Apply for the course</a>
+                <a class="k-link" href="miroslav-ciki-maslar-en.html">
+                  See profile and works
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="k-works" id="radovi">
+          <div class="container">
+            <div class="k-works-bar k-reveal">
+              <h3 class="k-works-title">This is the standard you learn</h3>
+              <a class="k-link" href="grid-gallery.html">
+                See the gallery
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+              </a>
+            </div>
+          </div>
+          <div class="k-marquee" role="region" aria-label="A selection of work by Miroslav Maslar Ciki">
+            <div class="k-track">
+              <div class="k-set">
+              <figure class="k-work"><img src="images/kurs/work-hannibal-640.webp" srcset="images/kurs/work-hannibal-640.webp 640w, images/kurs/work-hannibal.webp 933w" sizes="(max-width: 575px) 200px, 22vw" alt="Black and grey realistic portrait tattoo by Miroslav Maslar Ciki" width="933" height="1400" loading="lazy" decoding="async" /><figcaption>Black &amp; grey realism</figcaption></figure>
+              <figure class="k-work"><img src="images/kurs/work-geisha-640.webp" srcset="images/kurs/work-geisha-640.webp 640w, images/kurs/work-geisha.webp 926w" sizes="(max-width: 575px) 200px, 22vw" alt="Colour realism geisha tattoo on a forearm – The Black Dahlia Tattoo Studio" width="926" height="1400" loading="lazy" decoding="async" /><figcaption>Colour realism</figcaption></figure>
+              <figure class="k-work"><img src="images/kurs/work-sleeve-640.webp" srcset="images/kurs/work-sleeve-640.webp 640w, images/kurs/work-sleeve.webp 1050w" sizes="(max-width: 575px) 200px, 22vw" alt="Black and grey sculpture sleeve by Miroslav Maslar Ciki" width="1050" height="1400" loading="lazy" decoding="async" /><figcaption>Large-scale project &middot; sleeve</figcaption></figure>
+              <figure class="k-work"><img src="images/kurs/canvas-skull-640.webp" srcset="images/kurs/canvas-skull-640.webp 640w, images/kurs/canvas-skull.webp 800w" sizes="(max-width: 575px) 200px, 22vw" alt="Skull painting on canvas by Miroslav Maslar Ciki" width="800" height="1200" loading="lazy" decoding="async" /><figcaption>Canvas painting</figcaption></figure>
+              <figure class="k-work"><img src="images/kurs/work-lips-640.webp" srcset="images/kurs/work-lips-640.webp 640w, images/kurs/work-lips.webp 1037w" sizes="(max-width: 575px) 200px, 22vw" alt="Colour realism tattoo of a woman's face with red lips – The Black Dahlia Tattoo Studio" width="1037" height="1400" loading="lazy" decoding="async" /><figcaption>Colour realism</figcaption></figure>
+              <figure class="k-work"><img src="images/kurs/work-boxer-640.webp" srcset="images/kurs/work-boxer-640.webp 640w, images/kurs/work-boxer.webp 1058w" sizes="(max-width: 575px) 200px, 22vw" alt="Black and grey realistic boxer tattoo – The Black Dahlia Tattoo Studio" width="1058" height="1400" loading="lazy" decoding="async" /><figcaption>Black &amp; grey portrait</figcaption></figure>
+              <figure class="k-work"><img src="images/kurs/canvas-face-640.webp" srcset="images/kurs/canvas-face-640.webp 640w, images/kurs/canvas-face.webp 800w" sizes="(max-width: 575px) 200px, 22vw" alt="Colour portrait painting on canvas by Miroslav Maslar Ciki" width="800" height="1200" loading="lazy" decoding="async" /><figcaption>Canvas painting</figcaption></figure>
+              <figure class="k-work"><img src="images/kurs/work-joker-640.webp" srcset="images/kurs/work-joker-640.webp 640w, images/kurs/work-joker.webp 980w" sizes="(max-width: 575px) 200px, 22vw" alt="Colour realism sleeve with pop-culture motifs – The Black Dahlia Tattoo Studio" width="980" height="1400" loading="lazy" decoding="async" /><figcaption>Colour realism &middot; sleeve</figcaption></figure>
+              <figure class="k-work"><img src="images/kurs/canvas-blue-640.webp" srcset="images/kurs/canvas-blue-640.webp 640w, images/kurs/canvas-blue.webp 800w" sizes="(max-width: 575px) 200px, 22vw" alt="Abstract portrait painting on canvas in blue and red tones by Miroslav Maslar Ciki" width="800" height="1200" loading="lazy" decoding="async" /><figcaption>Canvas painting</figcaption></figure>
+              </div>
+              <!-- duplicate set for a seamless loop (hidden from assistive tech) -->
+              <div class="k-set" aria-hidden="true">
+              <figure class="k-work"><img src="images/kurs/work-hannibal-640.webp" srcset="images/kurs/work-hannibal-640.webp 640w, images/kurs/work-hannibal.webp 933w" sizes="(max-width: 575px) 200px, 22vw" alt="" width="933" height="1400" loading="lazy" decoding="async" /><figcaption>Black &amp; grey realism</figcaption></figure>
+              <figure class="k-work"><img src="images/kurs/work-geisha-640.webp" srcset="images/kurs/work-geisha-640.webp 640w, images/kurs/work-geisha.webp 926w" sizes="(max-width: 575px) 200px, 22vw" alt="" width="926" height="1400" loading="lazy" decoding="async" /><figcaption>Colour realism</figcaption></figure>
+              <figure class="k-work"><img src="images/kurs/work-sleeve-640.webp" srcset="images/kurs/work-sleeve-640.webp 640w, images/kurs/work-sleeve.webp 1050w" sizes="(max-width: 575px) 200px, 22vw" alt="" width="1050" height="1400" loading="lazy" decoding="async" /><figcaption>Large-scale project &middot; sleeve</figcaption></figure>
+              <figure class="k-work"><img src="images/kurs/canvas-skull-640.webp" srcset="images/kurs/canvas-skull-640.webp 640w, images/kurs/canvas-skull.webp 800w" sizes="(max-width: 575px) 200px, 22vw" alt="" width="800" height="1200" loading="lazy" decoding="async" /><figcaption>Canvas painting</figcaption></figure>
+              <figure class="k-work"><img src="images/kurs/work-lips-640.webp" srcset="images/kurs/work-lips-640.webp 640w, images/kurs/work-lips.webp 1037w" sizes="(max-width: 575px) 200px, 22vw" alt="" width="1037" height="1400" loading="lazy" decoding="async" /><figcaption>Colour realism</figcaption></figure>
+              <figure class="k-work"><img src="images/kurs/work-boxer-640.webp" srcset="images/kurs/work-boxer-640.webp 640w, images/kurs/work-boxer.webp 1058w" sizes="(max-width: 575px) 200px, 22vw" alt="" width="1058" height="1400" loading="lazy" decoding="async" /><figcaption>Black &amp; grey portrait</figcaption></figure>
+              <figure class="k-work"><img src="images/kurs/canvas-face-640.webp" srcset="images/kurs/canvas-face-640.webp 640w, images/kurs/canvas-face.webp 800w" sizes="(max-width: 575px) 200px, 22vw" alt="" width="800" height="1200" loading="lazy" decoding="async" /><figcaption>Canvas painting</figcaption></figure>
+              <figure class="k-work"><img src="images/kurs/work-joker-640.webp" srcset="images/kurs/work-joker-640.webp 640w, images/kurs/work-joker.webp 980w" sizes="(max-width: 575px) 200px, 22vw" alt="" width="980" height="1400" loading="lazy" decoding="async" /><figcaption>Colour realism &middot; sleeve</figcaption></figure>
+              <figure class="k-work"><img src="images/kurs/canvas-blue-640.webp" srcset="images/kurs/canvas-blue-640.webp 640w, images/kurs/canvas-blue.webp 800w" sizes="(max-width: 575px) 200px, 22vw" alt="" width="800" height="1200" loading="lazy" decoding="async" /><figcaption>Canvas painting</figcaption></figure>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           4. Program — curriculum modules (accordion)
            ============================================================ -->
       <section class="k-section k-mist" id="program">
         <div class="container">
@@ -513,8 +580,8 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
               <h2 class="k-title">From the first line to a <em>finished piece</em></h2>
               <p class="k-text">The program follows a logical order: foundations and safety first, then technique, and finally design and working with clients. Every module combines theory with hands-on practice in the studio.</p>
               <div class="k-actions">
-                <a class="k-link" href="#radovi">
-                  See the mentor's work
+                <a class="k-link" href="#zakazi-kurs">
+                  Apply for the course
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
                 </a>
               </div>
@@ -703,163 +770,9 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
       </section>
 
       <!-- ============================================================
-           4. The course — one program, no tiers
+           5. FAQ
            ============================================================ -->
-      <section class="k-section k-dark" id="kurs">
-        <div class="container">
-          <div class="k-course">
-            <div class="k-course-head k-reveal">
-              <p class="k-eyebrow">The course</p>
-              <h2 class="k-title">One course, <em>one&nbsp;program</em></h2>
-              <p class="k-lead">No levels, no packages – one 3-month program, the same for everyone. Whether you are holding a machine for the first time or already have some basic experience, you work directly with your mentor.</p>
-              <div class="k-actions">
-                <a class="button button-primary" href="#zakazi-kurs">Apply now</a>
-              </div>
-            </div>
-            <div class="k-course-grid">
-              <div class="k-course-col k-reveal" data-delay="1">
-                <h3>Who the course is for</h3>
-                <ul>
-                  <li>Complete beginners with no previous experience</li>
-                  <li>Those who already have some basic experience and want to improve their technique</li>
-                  <li>Artists who want to master realism and colour realism</li>
-                  <li>Anyone who sees tattooing as a profession, not a hobby</li>
-                </ul>
-              </div>
-              <div class="k-course-col k-reveal" data-delay="2">
-                <h3>What you get</h3>
-                <ul>
-                  <li>Work on the studio's professional equipment</li>
-                  <li>Direct mentoring from Miroslav “Ciki” Maslar</li>
-                  <li>The full program – from hygiene to working with clients</li>
-                  <li>Preparation for working independently in a tattoo studio</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ============================================================
-           5. Works — marquee of the mentor's work
-           ============================================================ -->
-      <section class="k-section k-works" id="radovi">
-        <div class="container">
-          <div class="k-works-head k-reveal">
-            <div>
-              <p class="k-eyebrow">The mentor's work</p>
-              <h2 class="k-title">This is the standard you learn</h2>
-            </div>
-            <div>
-              <p class="k-text">Realism, colour realism, black &amp; grey and canvas work – a selection of your mentor's pieces.</p>
-              <a class="k-link" href="grid-gallery-en.html">
-                See the gallery
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="k-marquee" role="region" aria-label="A selection of work by Miroslav Maslar Ciki">
-          <div class="k-track">
-            <div class="k-set">
-            <figure class="k-work"><img src="images/kurs/work-hannibal-640.webp" srcset="images/kurs/work-hannibal-640.webp 640w, images/kurs/work-hannibal.webp 933w" sizes="(max-width: 575px) 200px, 22vw" alt="Black and grey realistic portrait tattoo by Miroslav Maslar Ciki" width="933" height="1400" loading="lazy" decoding="async" /><figcaption>Black &amp; grey realism</figcaption></figure>
-            <figure class="k-work"><img src="images/kurs/work-geisha-640.webp" srcset="images/kurs/work-geisha-640.webp 640w, images/kurs/work-geisha.webp 926w" sizes="(max-width: 575px) 200px, 22vw" alt="Colour realism geisha tattoo on a forearm – The Black Dahlia Tattoo Studio" width="926" height="1400" loading="lazy" decoding="async" /><figcaption>Colour realism</figcaption></figure>
-            <figure class="k-work"><img src="images/kurs/work-sleeve-640.webp" srcset="images/kurs/work-sleeve-640.webp 640w, images/kurs/work-sleeve.webp 1050w" sizes="(max-width: 575px) 200px, 22vw" alt="Black and grey sculpture sleeve by Miroslav Maslar Ciki" width="1050" height="1400" loading="lazy" decoding="async" /><figcaption>Large-scale project &middot; sleeve</figcaption></figure>
-            <figure class="k-work"><img src="images/kurs/canvas-skull-640.webp" srcset="images/kurs/canvas-skull-640.webp 640w, images/kurs/canvas-skull.webp 800w" sizes="(max-width: 575px) 200px, 22vw" alt="Skull painting on canvas by Miroslav Maslar Ciki" width="800" height="1200" loading="lazy" decoding="async" /><figcaption>Canvas painting</figcaption></figure>
-            <figure class="k-work"><img src="images/kurs/work-lips-640.webp" srcset="images/kurs/work-lips-640.webp 640w, images/kurs/work-lips.webp 1037w" sizes="(max-width: 575px) 200px, 22vw" alt="Colour realism tattoo of a woman's face with red lips – The Black Dahlia Tattoo Studio" width="1037" height="1400" loading="lazy" decoding="async" /><figcaption>Colour realism</figcaption></figure>
-            <figure class="k-work"><img src="images/kurs/work-boxer-640.webp" srcset="images/kurs/work-boxer-640.webp 640w, images/kurs/work-boxer.webp 1058w" sizes="(max-width: 575px) 200px, 22vw" alt="Black and grey realistic boxer tattoo – The Black Dahlia Tattoo Studio" width="1058" height="1400" loading="lazy" decoding="async" /><figcaption>Black &amp; grey portrait</figcaption></figure>
-            <figure class="k-work"><img src="images/kurs/canvas-face-640.webp" srcset="images/kurs/canvas-face-640.webp 640w, images/kurs/canvas-face.webp 800w" sizes="(max-width: 575px) 200px, 22vw" alt="Colour portrait painting on canvas by Miroslav Maslar Ciki" width="800" height="1200" loading="lazy" decoding="async" /><figcaption>Canvas painting</figcaption></figure>
-            <figure class="k-work"><img src="images/kurs/work-joker-640.webp" srcset="images/kurs/work-joker-640.webp 640w, images/kurs/work-joker.webp 980w" sizes="(max-width: 575px) 200px, 22vw" alt="Colour realism sleeve with pop-culture motifs – The Black Dahlia Tattoo Studio" width="980" height="1400" loading="lazy" decoding="async" /><figcaption>Colour realism &middot; sleeve</figcaption></figure>
-            <figure class="k-work"><img src="images/kurs/canvas-blue-640.webp" srcset="images/kurs/canvas-blue-640.webp 640w, images/kurs/canvas-blue.webp 800w" sizes="(max-width: 575px) 200px, 22vw" alt="Abstract portrait painting on canvas in blue and red tones by Miroslav Maslar Ciki" width="800" height="1200" loading="lazy" decoding="async" /><figcaption>Canvas painting</figcaption></figure>
-            </div>
-            <!-- duplicate set for a seamless loop (hidden from assistive tech) -->
-            <div class="k-set" aria-hidden="true">
-            <figure class="k-work"><img src="images/kurs/work-hannibal-640.webp" srcset="images/kurs/work-hannibal-640.webp 640w, images/kurs/work-hannibal.webp 933w" sizes="(max-width: 575px) 200px, 22vw" alt="" width="933" height="1400" loading="lazy" decoding="async" /><figcaption>Black &amp; grey realism</figcaption></figure>
-            <figure class="k-work"><img src="images/kurs/work-geisha-640.webp" srcset="images/kurs/work-geisha-640.webp 640w, images/kurs/work-geisha.webp 926w" sizes="(max-width: 575px) 200px, 22vw" alt="" width="926" height="1400" loading="lazy" decoding="async" /><figcaption>Colour realism</figcaption></figure>
-            <figure class="k-work"><img src="images/kurs/work-sleeve-640.webp" srcset="images/kurs/work-sleeve-640.webp 640w, images/kurs/work-sleeve.webp 1050w" sizes="(max-width: 575px) 200px, 22vw" alt="" width="1050" height="1400" loading="lazy" decoding="async" /><figcaption>Large-scale project &middot; sleeve</figcaption></figure>
-            <figure class="k-work"><img src="images/kurs/canvas-skull-640.webp" srcset="images/kurs/canvas-skull-640.webp 640w, images/kurs/canvas-skull.webp 800w" sizes="(max-width: 575px) 200px, 22vw" alt="" width="800" height="1200" loading="lazy" decoding="async" /><figcaption>Canvas painting</figcaption></figure>
-            <figure class="k-work"><img src="images/kurs/work-lips-640.webp" srcset="images/kurs/work-lips-640.webp 640w, images/kurs/work-lips.webp 1037w" sizes="(max-width: 575px) 200px, 22vw" alt="" width="1037" height="1400" loading="lazy" decoding="async" /><figcaption>Colour realism</figcaption></figure>
-            <figure class="k-work"><img src="images/kurs/work-boxer-640.webp" srcset="images/kurs/work-boxer-640.webp 640w, images/kurs/work-boxer.webp 1058w" sizes="(max-width: 575px) 200px, 22vw" alt="" width="1058" height="1400" loading="lazy" decoding="async" /><figcaption>Black &amp; grey portrait</figcaption></figure>
-            <figure class="k-work"><img src="images/kurs/canvas-face-640.webp" srcset="images/kurs/canvas-face-640.webp 640w, images/kurs/canvas-face.webp 800w" sizes="(max-width: 575px) 200px, 22vw" alt="" width="800" height="1200" loading="lazy" decoding="async" /><figcaption>Canvas painting</figcaption></figure>
-            <figure class="k-work"><img src="images/kurs/work-joker-640.webp" srcset="images/kurs/work-joker-640.webp 640w, images/kurs/work-joker.webp 980w" sizes="(max-width: 575px) 200px, 22vw" alt="" width="980" height="1400" loading="lazy" decoding="async" /><figcaption>Colour realism &middot; sleeve</figcaption></figure>
-            <figure class="k-work"><img src="images/kurs/canvas-blue-640.webp" srcset="images/kurs/canvas-blue-640.webp 640w, images/kurs/canvas-blue.webp 800w" sizes="(max-width: 575px) 200px, 22vw" alt="" width="800" height="1200" loading="lazy" decoding="async" /><figcaption>Canvas painting</figcaption></figure>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ============================================================
-           6. Mentor
-           ============================================================ -->
-      <section class="k-section k-mist" id="mentor">
-        <div class="container">
-          <div class="k-mentor-grid">
-            <div class="k-mentor-visual k-reveal">
-              <img class="k-mv-main" src="images/kurs/mentor-work.webp" alt="Black and grey full-back angel tattoo by Miroslav Maslar Ciki" width="1040" height="1300" loading="lazy" decoding="async" />
-              <img class="k-mv-portrait" src="images/kurs/mentor.jpg" alt="Miroslav Maslar Ciki, founder of The Black Dahlia Tattoo Studio" width="370" height="370" loading="lazy" decoding="async" />
-            </div>
-            <div class="k-reveal" data-delay="1">
-              <p class="k-eyebrow">Your mentor</p>
-              <h2 class="k-title">Miroslav Maslar <em>Ciki</em></h2>
-              <p class="k-mentor-role">Founder, Tattoo Artist</p>
-              <p class="k-text">Ciki has been tattooing for more than 15 years and covers all tattoo styles. His favourites are realism and colour realism. He loves his work, is exceptionally talented and creative, and especially enjoys complex, original tattoo projects.</p>
-              <blockquote class="k-quote">For us, tattooing is an art that gets under the skin. No project is impossible.</blockquote>
-              <div class="k-actions">
-                <a class="k-link" href="miroslav-ciki-maslar-en.html">
-                  See profile and works
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ============================================================
-           7. Process — how enrolment works
-           ============================================================ -->
-      <section class="k-section" id="proces">
-        <div class="container">
-          <div class="k-reveal">
-            <p class="k-eyebrow">How the course works</p>
-            <h2 class="k-title">From application to working independently</h2>
-          </div>
-          <div class="k-steps">
-            <div class="k-step k-reveal">
-              <div class="k-step-dot">01</div>
-              <h3>Application</h3>
-              <p>Fill in the form at the bottom of the page or call us. Tell us how much experience you have and what you want to learn.</p>
-            </div>
-            <div class="k-step k-reveal" data-delay="1">
-              <div class="k-step-dot">02</div>
-              <h3>Conversation</h3>
-              <p>We get in touch, go through your experience and goals, and agree on dates that suit you.</p>
-            </div>
-            <div class="k-step k-reveal" data-delay="2">
-              <div class="k-step-dot">03</div>
-              <h3>Training in the studio</h3>
-              <p>For three months you work alongside your mentor, on professional equipment, through the program modules.</p>
-            </div>
-            <div class="k-step k-reveal" data-delay="3">
-              <div class="k-step-dot">04</div>
-              <h3>Working independently</h3>
-              <p>You round off the program with a finished tattoo, ready to work independently in a tattoo studio.</p>
-            </div>
-          </div>
-          <div class="k-actions k-steps-cta k-reveal">
-            <a class="button button-primary" href="#zakazi-kurs">Apply for the course</a>
-            <a class="k-link" href="#faq">
-              Read the FAQ
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- ============================================================
-           8. FAQ
-           ============================================================ -->
-      <section class="k-section k-mist" id="faq">
+      <section class="k-section" id="faq">
         <div class="container">
           <div class="k-split">
             <div class="k-sticky k-reveal">
@@ -916,21 +829,23 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
       </section>
 
       <!-- ============================================================
-           9. Sign-up form (same form contract as before: php/kurs.php)
+           6. Sign-up form + enrolment steps (same form contract as before: php/kurs.php)
            ============================================================ -->
       <section id="zakazi-kurs" class="zakazi-termin bg-primary k-section k-dark k-signup">
         <div class="container">
           <div class="k-signup-grid">
-            <div class="k-reveal">
+            <div class="k-signup-intro k-reveal">
               <p class="k-eyebrow">Application</p>
               <h2 class="k-title">Sign Up Today</h2>
-              <p class="k-text">Ready to start your career in the world of tattooing? Sign up for our course and become part of a community of artists who create masterpieces on skin. For more information and registration, fill out the form below.</p>
-              <ul class="k-contact">
-                <li><span>Phone</span><a href="tel:+38163235177">+381 63 235 177</a></li>
-                <li><span>E-mail</span><a href="mailto:blackdahliabooking1@gmail.com">blackdahliabooking1@gmail.com</a></li>
-                <li><span>Address</span><a href="https://maps.app.goo.gl/9FNGv7svKvTTroEP6" target="_blank" rel="noopener">Bulevar despota Stefana 103, Belgrade 11050</a></li>
-                <li><span>Opening hours</span>Mon – Sun: 13:30 – 20:30</li>
-              </ul>
+              <div class="k-steps-wrap">
+                <p class="k-steps-label">From sign-up to working independently</p>
+                <ol class="k-steps">
+                  <li class="k-step"><span class="k-step-dot" aria-hidden="true">01</span><h3>Application</h3><p>Fill in the form or call us. Tell us how much experience you have and what you want to learn.</p></li>
+                  <li class="k-step"><span class="k-step-dot" aria-hidden="true">02</span><h3>Conversation</h3><p>We get in touch, go through your experience and goals, and agree on dates that suit you.</p></li>
+                  <li class="k-step"><span class="k-step-dot" aria-hidden="true">03</span><h3>Training in the studio</h3><p>For three months you work alongside your mentor, through the program modules.</p></li>
+                  <li class="k-step"><span class="k-step-dot" aria-hidden="true">04</span><h3>Working independently</h3><p>You round off the program with a finished tattoo, ready to work independently in a tattoo studio.</p></li>
+                </ol>
+              </div>
             </div>
             <div class="k-form-card k-reveal" data-delay="1">
               <!-- RD Mailform-->
@@ -983,6 +898,12 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                 <p class="k-form-note">Sending your application is not a commitment – we will get in touch to agree on the details.</p>
               </form>
             </div>
+            <ul class="k-contact k-reveal">
+              <li><span>Phone</span><a href="tel:+38163235177">+381 63 235 177</a></li>
+              <li><span>E-mail</span><a href="mailto:blackdahliabooking1@gmail.com">blackdahliabooking1@gmail.com</a></li>
+              <li><span>Address</span><a href="https://maps.app.goo.gl/9FNGv7svKvTTroEP6" target="_blank" rel="noopener">Bulevar despota Stefana 103, Belgrade 11050</a></li>
+              <li><span>Opening hours</span>Mon – Sun: 13:30 – 20:30</li>
+            </ul>
           </div>
         </div>
       </section>
