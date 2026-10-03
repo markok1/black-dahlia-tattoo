@@ -23,7 +23,7 @@
 }
 
 .k-section {
-  padding: clamp(64px, 9vw, 130px) 0;
+  padding: clamp(56px, 6.5vw, 96px) 0;
 }
 .k-section[id] {
   scroll-margin-top: 96px;
@@ -80,9 +80,6 @@
   font-weight: 500;
   color: var(--k-ink);
   max-width: 52ch;
-}
-.k-dark .k-lead {
-  color: rgba(255, 255, 255, 0.85);
 }
 .k-text {
   margin: 0;
@@ -169,7 +166,7 @@
 
 /* ---- 1. Intro ---------------------------------------------------------- */
 .k-intro {
-  padding-top: clamp(56px, 7vw, 110px);
+  padding-top: clamp(48px, 5.5vw, 80px);
 }
 .k-intro-grid {
   display: grid;
@@ -189,8 +186,8 @@
   display: grid;
   grid-template-columns: minmax(0, 6fr) minmax(0, 6fr);
   gap: 24px clamp(32px, 5vw, 80px);
-  margin-top: clamp(48px, 6vw, 88px);
-  padding-top: clamp(32px, 4vw, 48px);
+  margin-top: clamp(32px, 4vw, 56px);
+  padding-top: clamp(24px, 3vw, 36px);
   border-top: 1px solid var(--k-line);
 }
 .k-about .k-text {
@@ -217,8 +214,7 @@
   border: 1px solid var(--k-line);
   pointer-events: none;
 }
-.k-media video,
-.k-media > img {
+.k-media video {
   position: relative;
   display: block;
   width: 100%;
@@ -228,8 +224,7 @@
   background: #000;
 }
 .k-media #intro,
-.k-media video,
-.k-media > img {
+.k-media video {
   margin: 0;
 }
 .k-badge {
@@ -257,7 +252,7 @@
 .k-facts {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  margin-top: clamp(40px, 5vw, 72px);
+  margin-top: clamp(28px, 3.5vw, 44px);
   border-top: 1px solid var(--k-line);
   border-bottom: 1px solid var(--k-line);
 }
@@ -294,8 +289,8 @@
   color: var(--k-ink);
 }
 .k-goal {
-  margin-top: clamp(56px, 7vw, 96px);
-  padding-top: clamp(32px, 4vw, 48px);
+  margin-top: clamp(32px, 4vw, 56px);
+  padding-top: clamp(24px, 3vw, 36px);
   border-top: 1px solid var(--k-line);
 }
 .k-goal p {
@@ -342,7 +337,7 @@
   grid-template-columns: minmax(0, 6fr) minmax(0, 6fr);
   gap: 28px clamp(32px, 5vw, 96px);
   align-items: stretch;
-  margin-bottom: clamp(48px, 6.5vw, 96px);
+  margin-bottom: clamp(36px, 4.5vw, 64px);
 }
 /* both columns span the same height: the eyebrow and the paragraph share the
    top edge, the title and the "limited places" note share the bottom edge */
@@ -724,7 +719,7 @@
 
 /* Everything the course covers: a ruled index, cells fill with white on hover */
 .k-incl {
-  margin-top: clamp(88px, 11vw, 160px);
+  margin-top: clamp(56px, 6vw, 96px);
 }
 .k-incl-head {
   display: flex;
@@ -762,9 +757,9 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 40px;
-  min-height: clamp(150px, 15vw, 200px);
-  padding: 22px 24px 26px;
+  gap: 18px;
+  min-height: clamp(108px, 9.5vw, 136px);
+  padding: 18px 20px 20px;
   border-right: 1px solid var(--k-line-inv);
   border-bottom: 1px solid var(--k-line-inv);
 }
@@ -815,10 +810,153 @@
   }
 }
 .k-offer-cta {
-  margin-top: clamp(40px, 5vw, 64px);
+  margin-top: clamp(32px, 4vw, 48px);
 }
 
-/* ---- 3. Program (curriculum accordion) -------------------------------- */
+/* ---- 3. Mentor + works marquee ------------------------------------------ */
+.k-mentor-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 6fr);
+  gap: clamp(32px, 6vw, 96px);
+  align-items: center;
+}
+.k-mentor-visual {
+  position: relative;
+  padding-right: 16%;
+}
+.k-mv-main {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+.k-mv-portrait {
+  position: absolute;
+  right: 0;
+  bottom: -9%;
+  width: 44%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: 8px solid var(--k-paper);
+  filter: grayscale(1);
+  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.45);
+}
+.k-mentor-role {
+  margin: -8px 0 22px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--k-muted);
+}
+.k-quote {
+  margin: 28px 0 0;
+  padding: 4px 0 4px 26px;
+  border-left: 2px solid var(--k-ink);
+  font-size: clamp(18px, 1.6vw, 22px);
+  line-height: 1.4;
+  font-weight: 500;
+  color: var(--k-ink);
+}
+/* the marquee runs full-bleed under the mentor's bio */
+.k-works {
+  margin-top: clamp(64px, 8vw, 112px);
+  overflow: hidden;
+}
+.k-works-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 8px 32px;
+}
+.k-works-title {
+  margin: 0;
+  font-size: clamp(24px, 2.4vw, 34px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  color: var(--k-ink);
+}
+.k-marquee {
+  margin-top: clamp(24px, 3vw, 40px);
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+}
+.k-track {
+  display: flex;
+  width: max-content;
+  animation: k-scroll 55s linear infinite;
+}
+.k-set {
+  display: flex;
+  gap: 18px;
+  padding-right: 18px;
+}
+@media (hover: hover) {
+  .k-marquee:hover .k-track {
+    animation-play-state: paused;
+  }
+}
+@keyframes k-scroll {
+  to { transform: translateX(-50%); }
+}
+.k-work {
+  position: relative;
+  flex: 0 0 auto;
+  width: clamp(200px, 22vw, 300px);
+  aspect-ratio: 3 / 4;
+  margin: 0;
+  overflow: hidden;
+  background: #111;
+}
+.k-set .k-work:nth-child(even) {
+  margin-top: 40px;
+}
+.k-work img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.05);
+  transform: scale(1.02);
+  transition: filter 0.6s var(--k-ease), transform 1s var(--k-ease);
+}
+@media (hover: hover) {
+  .k-work:hover img {
+    filter: none;
+    transform: scale(1.08);
+  }
+}
+.k-work figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 18px 16px 14px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.72));
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.45s var(--k-ease), transform 0.45s var(--k-ease);
+}
+@media (hover: hover) {
+  .k-work figcaption {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  .k-work:hover figcaption {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---- 4. Program (curriculum accordion) -------------------------------- */
 .k-split {
   display: grid;
   grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
@@ -981,255 +1119,7 @@
   color: var(--k-ink);
 }
 
-/* ---- 4. The course (one program, no tiers) ----------------------------- */
-.k-course {
-  display: grid;
-  grid-template-columns: minmax(0, 6fr) minmax(0, 6fr);
-  gap: clamp(32px, 6vw, 110px);
-  align-items: start;
-}
-.k-course-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px 40px;
-  padding-top: 8px;
-}
-.k-course-col {
-  padding-top: 24px;
-  border-top: 1px solid rgba(255, 255, 255, 0.35);
-}
-.k-course-col h3 {
-  margin: 0 0 18px;
-  font-size: clamp(19px, 1.6vw, 22px);
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-  font-weight: 600;
-  color: #fff;
-}
-.k-course-col ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 12px;
-}
-.k-course-col li {
-  position: relative;
-  padding-left: 22px;
-  font-size: 15px;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.88);
-}
-.k-course-col li::before {
-  content: "\2013";
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: #fff;
-}
-.k-course-head .k-title {
-  font-size: clamp(34px, 4vw, 54px);
-  max-width: none;
-}
-.k-course-head .k-actions {
-  margin-top: 30px;
-}
-
-/* ---- 5. Works marquee -------------------------------------------------- */
-.k-works {
-  padding-bottom: clamp(48px, 6vw, 90px);
-  overflow: hidden;
-}
-.k-works-head {
-  display: grid;
-  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
-  gap: 32px 64px;
-  align-items: end;
-}
-.k-works-head .k-title {
-  margin-bottom: 0;
-}
-.k-works-head .k-text {
-  margin-bottom: 20px;
-}
-.k-marquee {
-  margin-top: clamp(36px, 5vw, 64px);
-  overflow: hidden;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
-}
-.k-track {
-  display: flex;
-  width: max-content;
-  animation: k-scroll 55s linear infinite;
-}
-.k-set {
-  display: flex;
-  gap: 18px;
-  padding-right: 18px;
-}
-@media (hover: hover) {
-  .k-marquee:hover .k-track {
-    animation-play-state: paused;
-  }
-}
-@keyframes k-scroll {
-  to { transform: translateX(-50%); }
-}
-.k-work {
-  position: relative;
-  flex: 0 0 auto;
-  width: clamp(200px, 22vw, 300px);
-  aspect-ratio: 3 / 4;
-  margin: 0;
-  overflow: hidden;
-  background: #111;
-}
-.k-set .k-work:nth-child(even) {
-  margin-top: 40px;
-}
-.k-work img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: grayscale(1) contrast(1.05);
-  transform: scale(1.02);
-  transition: filter 0.6s var(--k-ease), transform 1s var(--k-ease);
-}
-@media (hover: hover) {
-  .k-work:hover img {
-    filter: none;
-    transform: scale(1.08);
-  }
-}
-.k-work figcaption {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 18px 16px 14px;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #fff;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.72));
-  opacity: 1;
-  transform: none;
-  transition: opacity 0.45s var(--k-ease), transform 0.45s var(--k-ease);
-}
-@media (hover: hover) {
-  .k-work figcaption {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  .k-work:hover figcaption {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-/* ---- 6. Mentor --------------------------------------------------------- */
-.k-mentor-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 6fr) minmax(0, 6fr);
-  gap: clamp(32px, 6vw, 96px);
-  align-items: center;
-}
-.k-mentor-visual {
-  position: relative;
-  padding-right: 16%;
-}
-.k-mv-main {
-  display: block;
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-}
-.k-mv-portrait {
-  position: absolute;
-  right: 0;
-  bottom: -9%;
-  width: 44%;
-  aspect-ratio: 1;
-  object-fit: cover;
-  border: 8px solid var(--k-mist);
-  filter: grayscale(1);
-  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.45);
-}
-.k-mentor-role {
-  margin: -8px 0 22px;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--k-muted);
-}
-.k-quote {
-  margin: 28px 0 0;
-  padding: 4px 0 4px 26px;
-  border-left: 2px solid var(--k-ink);
-  font-size: clamp(18px, 1.6vw, 22px);
-  line-height: 1.4;
-  font-weight: 500;
-  color: var(--k-ink);
-}
-
-/* ---- 7. Process -------------------------------------------------------- */
-.k-steps {
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  margin-top: clamp(40px, 5vw, 72px);
-}
-.k-steps::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: calc(75% + 26px);
-  top: 26px;
-  height: 1px;
-  background: var(--k-line);
-}
-.k-step {
-  position: relative;
-  padding-right: 32px;
-}
-.k-step-dot {
-  position: relative;
-  display: grid;
-  place-items: center;
-  width: 52px;
-  height: 52px;
-  border: 1px solid var(--k-ink);
-  border-radius: 50%;
-  background: #fff;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: var(--k-ink);
-  transition: background 0.4s var(--k-ease), color 0.4s var(--k-ease), transform 0.4s var(--k-ease);
-}
-.k-step h3 {
-  margin: 26px 0 10px;
-  font-size: 19px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  color: var(--k-ink);
-}
-.k-step p {
-  margin: 0;
-  font-size: 14.5px;
-  line-height: 1.6;
-  color: var(--k-muted);
-  max-width: 28ch;
-}
-.k-steps-cta {
-  margin-top: clamp(40px, 5vw, 64px);
-}
-
-/* ---- 8. FAQ ------------------------------------------------------------ */
+/* ---- 5. FAQ ------------------------------------------------------------ */
 .k-faq {
   list-style: none;
   margin: 0;
@@ -1272,7 +1162,7 @@
   max-width: 62ch;
 }
 
-/* ---- 9. Sign-up (keeps .bg-primary form styling from style.css) -------- */
+/* ---- 6. Sign-up + enrolment steps (form styling from style.css) -------- */
 .k-signup {
   position: relative;
   overflow: hidden;
@@ -1294,15 +1184,23 @@
 .k-signup-grid {
   display: grid;
   grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
-  gap: clamp(32px, 6vw, 96px);
+  grid-template-areas: "intro form" "contact form";
+  grid-template-rows: auto 1fr;
+  gap: 0 clamp(32px, 6vw, 96px);
   align-items: start;
   text-align: left;
 }
+.k-signup-intro {
+  grid-area: intro;
+}
+.k-signup-grid .k-form-card {
+  grid-area: form;
+}
+.k-signup-grid .k-contact {
+  grid-area: contact;
+}
 .k-signup .k-title {
   color: #fff;
-}
-.k-signup .k-text {
-  color: var(--k-muted-inv);
 }
 .k-contact {
   list-style: none;
@@ -1385,6 +1283,58 @@
   line-height: 1.55;
   color: var(--k-muted-inv);
 }
+/* Enrolment steps: a compact numbered list under the sign-up heading */
+.k-steps-wrap {
+  margin-top: 28px;
+}
+.k-steps-label {
+  margin: 0 0 4px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--k-muted-inv);
+}
+.k-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.k-step {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  column-gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--k-line-inv);
+}
+.k-step-dot {
+  grid-row: 1 / 3;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  font-variant-numeric: tabular-nums;
+  color: #fff;
+}
+.k-signup .k-step h3 {
+  margin: 6px 0 4px;
+  font-size: 16px;
+  line-height: 1.3;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #fff;
+}
+.k-signup .k-step p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--k-muted-inv);
+}
 
 /* ---- Scroll reveal (content is visible by default; JS opts in) --------- */
 html.k-io .k-reveal {
@@ -1454,13 +1404,6 @@ html.k-io .k-reveal.k-in {
   .k-incl-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
-  .k-course {
-    grid-template-columns: minmax(0, 1fr);
-  }
-  .k-course-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 32px 48px;
-  }
 }
 @media (max-width: 991.98px) {
   .k-facts {
@@ -1478,9 +1421,16 @@ html.k-io .k-reveal.k-in {
   .k-split,
   .k-offer-head,
   .k-mentor-grid,
-  .k-signup-grid,
-  .k-works-head {
+  .k-signup-grid {
     grid-template-columns: minmax(0, 1fr);
+  }
+  .k-signup-grid {
+    grid-template-areas: "intro" "form" "contact";
+    grid-template-rows: auto;
+    row-gap: 32px;
+  }
+  .k-signup-grid .k-contact {
+    margin-top: 0;
   }
   .k-sticky {
     position: static;
@@ -1490,16 +1440,6 @@ html.k-io .k-reveal.k-in {
   }
   .k-media {
     margin: 0 18px 18px 0;
-  }
-  .k-course {
-    grid-template-columns: minmax(0, 1fr);
-  }
-  .k-steps {
-    grid-template-columns: 1fr 1fr;
-    gap: 36px 24px;
-  }
-  .k-steps::before {
-    display: none;
   }
   .k-module-btn {
     grid-template-columns: 44px 1fr 36px;
@@ -1519,8 +1459,7 @@ html.k-io .k-reveal.k-in {
     max-width: 520px;
     margin-bottom: 10%;
   }
-  .k-media video,
-  .k-media > img {
+  .k-media video {
     aspect-ratio: 4 / 3;
   }
 }
@@ -1565,30 +1504,10 @@ html.k-io .k-reveal.k-in {
 }
 @media (max-width: 575.98px) {
   .k-section {
-    padding: 56px 0;
+    padding: 48px 0;
   }
   .k-fact {
     padding: 22px 16px;
-  }
-  .k-steps {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-  .k-step {
-    display: grid;
-    grid-template-columns: 52px minmax(0, 1fr);
-    column-gap: 18px;
-    padding-right: 0;
-  }
-  .k-step-dot {
-    grid-row: 1 / 3;
-    align-self: start;
-  }
-  .k-step h3 {
-    margin: 14px 0 6px;
-  }
-  .k-step p {
-    max-width: none;
   }
   .k-contact li {
     grid-template-columns: 1fr;
@@ -1614,7 +1533,6 @@ html.k-io .k-reveal.k-in {
   .k-module-body {
     padding-left: 46px;
   }
-  .k-course-grid,
   .k-about {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -1625,9 +1543,21 @@ html.k-io .k-reveal.k-in {
     flex-direction: row;
     align-items: baseline;
     justify-content: flex-start;
-    gap: 18px;
+    gap: 16px;
     min-height: 0;
-    padding: 18px 18px 19px;
+    padding: 13px 16px 14px;
+  }
+  .k-incl-t {
+    font-size: 15px;
+  }
+  .k-incl-item.is-key .k-incl-t {
+    font-size: 18px;
+  }
+  .k-faq-q {
+    padding: 16px 0;
+  }
+  .k-step {
+    padding: 12px 0;
   }
   .k-incl-n {
     flex: 0 0 26px;
